@@ -1,0 +1,116 @@
+@media (max-width: 425px) {
+  .latestMatchCard {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 1rem;
+    background-color: #0f172a;
+    border-radius: 10px;
+    border: 0 solid;
+  }
+  .opponentDetails {
+    color: #ffffff;
+    width: 70%;
+  }
+  .otherTeamName {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  .date {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .venue {
+    font-size: 13px;
+  }
+  .result {
+    font-size: 13px;
+    margin-top: 0.5rem;
+  }
+  .head {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 0.2rem;
+  }
+  .ans {
+    font-size: 13px;
+    margin-bottom: .8rem;
+  }
+  .ans:last-child{
+    margin-bottom: 0;
+  }
+  .competingTeamLogo {
+    width: 100%;
+    transition: .8s;
+  }
+  .competingTeamLogoContainer {
+    width: 30%;
+    align-self: center;
+    display: grid;
+    place-items: center;
+  }
+  .hr {
+    width: 100%;
+    margin: .8rem 0;
+    border: none;
+    background-color: white;
+    outline: none;
+  }
+}
+@media (min-width: 426px) {
+  .latestMatchCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 1.5rem;
+    background-color: #0f172a;
+    border-radius: 16px;
+    border: 0 solid;
+  }
+  .opponentDetails {
+    color: #ffffff;
+    align-self: center;
+    width: 25%;
+  }
+  .otherTeamName {
+    font-size: 32px;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+  .date {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .venue {
+    font-size: 16px;
+  }
+  .result {
+    font-size: 16px;
+    margin-top: 1rem;
+  }
+  .head {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 0.4rem;
+  }
+  .ans {
+    font-size: 14px;
+    margin-bottom: 1rem;
+  }
+  .competingTeamLogo {
+    width: 40%;
+  }
+  .competingTeamLogoContainer {
+    width: 50%;
+    align-self: center;
+    display: grid;
+    place-items: center;
+  }
+  .right {
+    text-align: right;
+  }
+  .latestMatchCard .hr {
+    display: none;
+  }
+}

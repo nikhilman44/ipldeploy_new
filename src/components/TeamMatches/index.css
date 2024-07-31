@@ -1,0 +1,93 @@
+:root {
+  --rcb: linear-gradient(#d91c1f, #a4261d, #1e293b);
+  --kkr: linear-gradient(#403f88, #5755a7, #f7db00);
+  --kxp: linear-gradient(#dd1f2d, #f2d1a0, #ffffff, #4960b6);
+  --csk: linear-gradient(#e9530d, #2b5da8, #32a6de);
+  --rr: linear-gradient(#074ea2, #074ea2, #c3a11f);
+  --mi: linear-gradient(#004b8d, #ffd141, #e1261c, #00a65d, #f98e2b, #ffffff);
+  --sh: linear-gradient(#fccb11, #ee7429, #dc0032, #b02528, #ffffff, #221f21);
+  --dc: linear-gradient(#2561ae, #282968, #d71921, #faad1b, #ffffff);
+}
+.rcb {
+  background: var(--rcb);
+}
+.kkr {
+  background: var(--kkr);
+}
+.kxp {
+  background: var(--kxp);
+}
+.csk {
+  background: var(--csk);
+}
+.rr {
+  background: var(--rr);
+}
+.mi {
+  background: var(--mi);
+}
+.sh {
+  background: var(--sh);
+}
+.dc {
+  background: var(--dc);
+}
+@media (max-width: 425px) {
+  .teamMatchesBg {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  .latestMatchTitle {
+    color: #ffffff;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .innerTeamMatchesContainer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .innerTeamMatchesContainer > img {
+    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+    transition: 0.8s;
+  }
+  .matchCardsContainer {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+@media (min-width: 426px) {
+  .teamMatchesBg {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+  }
+  .latestMatchTitle {
+    color: #ffffff;
+    align-self: flex-start;
+    font-size: 1.5rem;
+  }
+  .innerTeamMatchesContainer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .matchCardsContainer {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
