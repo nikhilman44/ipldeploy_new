@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
   .latestMatchTitle {
     color: #ffffff;
@@ -64,6 +64,20 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
   }
+  .backBtn {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.3rem 0.5rem;
+    font-size: 10px;
+    outline: none;
+    color: white;
+    font-weight: 700;
+  }
+  .statistics {
+    color: white;
+    font-size: 1.2rem;
+  }
 }
 @media (min-width: 426px) {
   .teamMatchesBg {
@@ -71,7 +85,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
   .latestMatchTitle {
     color: #ffffff;
@@ -89,5 +103,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+  }
+  .backBtn {
+    background-color: transparent;
+    border: 1.4px solid white;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    outline: none;
+    color: white;
+    font-weight: 600;
+  }
+  .statistics {
+    color: white;
+    font-size: 1.5rem;
   }
 }

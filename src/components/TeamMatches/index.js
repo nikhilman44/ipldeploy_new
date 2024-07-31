@@ -1,6 +1,8 @@
 // Write your code here
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 import Loader from 'react-loader-spinner'
+import {PieChart, Pie, Legend, Cell, ResponsiveContainer} from 'recharts'
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
 
@@ -86,17 +88,55 @@ class TeamMatches extends Component {
     }
   }
 
+  getPieChartData = () => {
+    const {recentMatchesState} = this.state
+    const data = [
+      {
+        count: 0,
+        status: 'Won',
+      },
+      {
+        count: 0,
+        status: 'Loss',
+      },
+      {
+        count: 0,
+        status: 'Draw',
+      },
+    ]
+    for (let i = 0; i < recentMatchesState.length; i += 1) {
+      if (recentMatchesState[i].matchStatus === 'Won') {
+        data[0].count += 1
+      } else if (recentMatchesState[i].matchStatus === 'Lost') {
+        data[1].count += 1
+      } else {
+        data[2].count += 1
+      }
+    }
+    return data
+  }
+
   render() {
-    const {latestMatchDetailsState, recentMatchesState, teamBanner, isloading} =
-      this.state
+    const {
+      latestMatchDetailsState,
+      recentMatchesState,
+      teamBanner,
+      isloading,
+    } = this.state
+
     return (
       <div className={`teamMatchesBg ${this.getTeamSpecificBgColor()}`}>
         {isloading ? (
-          <div testid="loader">
+          <div id="loader">
             <Loader type="Oval" color="#ffffff" width={50} height={50} />
           </div>
         ) : (
           <div className="innerTeamMatchesContainer">
+            <Link to="/">
+              <button type="button" className="backBtn">
+                Back
+              </button>
+            </Link>
             <img src={teamBanner} alt="team banner" />
             <p className="latestMatchTitle">Latest Matches</p>
             <LatestMatch latestMatchDetails={latestMatchDetailsState} />
@@ -108,6 +148,33 @@ class TeamMatches extends Component {
                 />
               ))}
             </ul>
+            <div>
+              <h1 className="statistics">Match Statistics</h1>
+              <ResponsiveContainer width="100%" height={250}>
+                <PieChart>
+                  <Pie
+                    data={this.getPieChartData()}
+                    dataKey="count"
+                    startAngle={0}
+                    endAngle={360}
+                    cx="50%"
+                    cy="50%"
+                    outerRadius="70%"
+                    label
+                  >
+                    <Cell name="Win" fill="green" />
+                    <Cell name="Lose" fill="red" />
+                    <Cell name="Draw" fill="yellow" />
+                  </Pie>
+                  <Legend
+                    iconType="circle"
+                    layout="vertical"
+                    verticalAlign="middle"
+                    align="right"
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         )}
       </div>
