@@ -15,7 +15,7 @@
   .cardImg {
     width: 70px;
     object-fit: scale-down;
-    transition: .8s;
+    transition: 0.8s;
   }
   .innerTeamCard > p {
     font-size: 1.2rem;

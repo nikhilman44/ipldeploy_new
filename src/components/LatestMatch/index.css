@@ -35,14 +35,14 @@
   }
   .ans {
     font-size: 13px;
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
   }
-  .ans:last-child{
+  .ans:last-child {
     margin-bottom: 0;
   }
   .competingTeamLogo {
     width: 100%;
-    transition: .8s;
+    transition: 0.8s;
   }
   .competingTeamLogoContainer {
     width: 30%;
@@ -52,7 +52,7 @@
   }
   .hr {
     width: 100%;
-    margin: .8rem 0;
+    margin: 0.8rem 0;
     border: none;
     background-color: white;
     outline: none;

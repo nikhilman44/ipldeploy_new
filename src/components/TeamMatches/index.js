@@ -117,17 +117,13 @@ class TeamMatches extends Component {
   }
 
   render() {
-    const {
-      latestMatchDetailsState,
-      recentMatchesState,
-      teamBanner,
-      isloading,
-    } = this.state
+    const {latestMatchDetailsState, recentMatchesState, teamBanner, isloading} =
+      this.state
 
     return (
       <div className={`teamMatchesBg ${this.getTeamSpecificBgColor()}`}>
         {isloading ? (
-          <div id="loader">
+          <div testid="loader">
             <Loader type="Oval" color="#ffffff" width={50} height={50} />
           </div>
         ) : (
@@ -150,30 +146,28 @@ class TeamMatches extends Component {
             </ul>
             <div>
               <h1 className="statistics">Match Statistics</h1>
-              <ResponsiveContainer width="100%" height={250}>
-                <PieChart>
-                  <Pie
-                    data={this.getPieChartData()}
-                    dataKey="count"
-                    startAngle={0}
-                    endAngle={360}
-                    cx="50%"
-                    cy="50%"
-                    outerRadius="70%"
-                    label
-                  >
-                    <Cell name="Win" fill="green" />
-                    <Cell name="Lose" fill="red" />
-                    <Cell name="Draw" fill="yellow" />
-                  </Pie>
-                  <Legend
-                    iconType="circle"
-                    layout="vertical"
-                    verticalAlign="middle"
-                    align="right"
-                  />
-                </PieChart>
-              </ResponsiveContainer>
+              <PieChart width={1000} height={300}>
+                <Pie
+                  data={this.getPieChartData()}
+                  dataKey="count"
+                  startAngle={0}
+                  endAngle={360}
+                  cx="50%"
+                  cy="50%"
+                  outerRadius="70%"
+                  label
+                >
+                  <Cell name="Win" fill="green" />
+                  <Cell name="Lose" fill="red" />
+                  <Cell name="Draw" fill="yellow" />
+                </Pie>
+                <Legend
+                  iconType="circle"
+                  layout="vertical"
+                  verticalAlign="middle"
+                  align="right"
+                />
+              </PieChart>
             </div>
           </div>
         )}
