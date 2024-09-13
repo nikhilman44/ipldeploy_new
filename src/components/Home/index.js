@@ -29,7 +29,7 @@ class Home extends Component {
     return (
       <div className="homeBgContainer">
         {isload ? (
-          <div testid="loader">
+          <div data-testid="loader">
             <Loader type="Oval" color="#ffffff" width={50} height={50} />
           </div>
         ) : (

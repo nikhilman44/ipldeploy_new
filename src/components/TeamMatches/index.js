@@ -117,26 +117,30 @@ class TeamMatches extends Component {
   }
 
   render() {
-    const {latestMatchDetailsState, recentMatchesState, teamBanner, isloading} =
-      this.state
+    const {
+      latestMatchDetailsState,
+      recentMatchesState,
+      teamBanner,
+      isloading,
+    } = this.state
 
     return (
       <div className={`teamMatchesBg ${this.getTeamSpecificBgColor()}`}>
         {isloading ? (
-          <div testid='loader'>
-            <Loader type='Oval' color='#ffffff' width={50} height={50} />
+          <div data-testid="loader">
+            <Loader type="Oval" color="#ffffff" width={50} height={50} />
           </div>
         ) : (
-          <div className='innerTeamMatchesContainer'>
-            <Link to='/'>
-              <button type='button' className='backBtn'>
+          <div className="innerTeamMatchesContainer">
+            <Link to="/">
+              <button type="button" className="backBtn">
                 Back
               </button>
             </Link>
-            <img src={teamBanner} alt='team banner' />
-            <p className='latestMatchTitle'>Latest Matches</p>
+            <img src={teamBanner} alt="team banner" />
+            <p className="latestMatchTitle">Latest Matches</p>
             <LatestMatch latestMatchDetails={latestMatchDetailsState} />
-            <ul className='matchCardsContainer'>
+            <ul className="matchCardsContainer">
               {recentMatchesState.map(eachRecentMatch => (
                 <MatchCard
                   eachRecentMatch={eachRecentMatch}
@@ -145,34 +149,34 @@ class TeamMatches extends Component {
               ))}
             </ul>
             <div>
-              <h1 className='statistics'>Match Statistics</h1>
+              <h1 className="statistics">Match Statistics</h1>
               <PieChart width={1000} height={300}>
                 <Pie
                   data={this.getPieChartData()}
-                  dataKey='count'
-                  cx='50%'
-                  cy='50%'
+                  dataKey="count"
+                  cx="50%"
+                  cy="50%"
                   outerRadius={50}
-                  fill='#fff'
+                  fill="#fff"
                 >
-                  <Cell fill='green' />
-                  <Cell fill='red' />
-                  <Cell fill='white' />
+                  <Cell fill="green" />
+                  <Cell fill="red" />
+                  <Cell fill="white" />
                 </Pie>
                 <Pie
                   data={this.getPieChartData()}
-                  dataKey='count'
-                  cx='50%'
-                  cy='50%'
+                  dataKey="count"
+                  cx="50%"
+                  cy="50%"
                   innerRadius={60}
                   outerRadius={80}
                   label
                 >
-                  <Cell name='Win' fill='green' />
-                  <Cell name='Lose' fill='red' />
-                  <Cell name='Draw' fill='white' />
+                  <Cell name="Win" fill="green" />
+                  <Cell name="Lose" fill="red" />
+                  <Cell name="Draw" fill="white" />
                 </Pie>
-                <Legend iconType='circle' />
+                <Legend iconType="circle" />
               </PieChart>
             </div>
           </div>
